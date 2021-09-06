@@ -1,5 +1,5 @@
 {% load i18n %}
-<div class="js-comment-reactions mt-2">
+{% load comment_tags %}    
     <span class="js-like-number text-dark">{{ comment.likes }}</span>
     {% url 'comment:react' pk=comment.id reaction='like' as like_url %}
     <a title="{% trans "like" %}" class="{% block like_link_cls %} {% endblock like_link_cls %}
@@ -22,4 +22,4 @@
     >
         {% include "comment/reactions/dislike_icon.html" %}
     </a>
-    </div>
+

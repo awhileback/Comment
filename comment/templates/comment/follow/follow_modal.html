@@ -28,7 +28,7 @@
                         {% trans "Follow" as follow %}
                         <button type="submit"
                                 title="{{ follow }}"
-                                class="btn btn-sm btn-success follow-modal-submit {% block follow_btn_extra_cls %}{% endblock follow_btn_extra_cls %}"
+                                class="btn btn-sm btn-primary follow-modal-submit {% block follow_btn_extra_cls %}{% endblock follow_btn_extra_cls %}"
                         data-url="{% url 'comment:toggle-subscription' %}">{{ follow }}</button>
                     </div>
                 </form>

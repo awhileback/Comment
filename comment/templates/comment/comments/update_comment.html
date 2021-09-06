@@ -4,7 +4,6 @@
         {% csrf_token %}
         {% include 'comment/comments/comment_form.html' with placeholder=placeholder %}
         <footer class="blockquote-footer edit-comment mt-2">
-            <small>
                 <input name="model_name" value="{% get_model_name model_object %}" hidden>
                 <input name="model_id" value="{{ model_object.id }}" hidden>
                 <input name="app_name" value="{% get_app_name model_object %}" hidden>
@@ -12,7 +11,6 @@
 
                 {% include 'comment/comments/apply_icon.html' %}
                 {% include 'comment/comments/cancel_icon.html' %}
-            </small>
         </footer>
     </form>
 </div>

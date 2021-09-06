@@ -2,7 +2,7 @@
 {% load i18n %}
 <button
     title="{% if comment|is_user_blocked %}{% trans 'Unblock user' %}{% else %}{% trans 'Block this user' %}{% endif %}"
-    class="js-comment-block {% block block_btn_cls %}btn btn-link{% endblock block_btn_cls %}"
+    class="js-comment-block float-right ml-4 {% block block_btn_cls %}btn btn-link{% endblock block_btn_cls %}"
     data-comment_id="{{ comment.id }}"
 >
     {% get_username_for_comment comment as username %}

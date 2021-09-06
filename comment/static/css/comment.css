@@ -1,7 +1,7 @@
 #comments :target {
-    border: 1px solid #2188ff;
+    border: 1px solid;
     border-radius: 6px;
-    box-shadow: 0 0 0 .2em #c8e1ff;
+    box-shadow: 0 0 0 .2em;
 }
 .js-comment-content {
     font-size: 1.1rem;
@@ -15,7 +15,7 @@
 }
 #comments .bb {
     padding-bottom: 2px;
-    border-bottom: 3px solid #00bc8c;
+    border-bottom: 3px solid;
 }
 #comments .text-wrap {
     word-wrap: break-word;
@@ -37,7 +37,7 @@
     resize: none;
 }
 #comments textarea:focus, #comments textarea:hover {
-    border: 1px solid #00bc8c;
+    border: 1px solid;
     outline: none;
 }
 .form-control:focus::placeholder,

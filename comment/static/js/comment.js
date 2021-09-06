@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // show and hide child comments
     let replyLink = replyLinkElement => {
-        getNthParent(replyLinkElement, 4).nextElementSibling.classList.toggle('d-none');
+        getNthParent(replyLinkElement, 6).querySelector(':scope > .js-replies').classList.toggle('d-none');
     };
 
     // resize the input field according to typed text
@@ -220,11 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let replyNumberElement = form.parentElement.previousElementSibling.querySelector(".js-reply-number");
                 let replyNum = Number(replyNumberElement.innerText) + 1;
                 replyNumberElement.textContent = replyNum.toString();
-                if (replyNum > 1) {
-                    reply.textContent = gettext("Replies");
-                } else {
-                    reply.textContent = gettext("Reply");
-                }
+                
                 commentCount(1);
                 // update followBtn
                 let followButton = form.parentElement.previousElementSibling.querySelector(".js-comment-follow");
@@ -272,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let cancelEdit = cancelBtn => {
-        getNthParent(cancelBtn, 4).replaceWith(commentBeforeEdit);
+        getNthParent(cancelBtn, 3).replaceWith(commentBeforeEdit);
     };
 
     let submitEditCommentForm = form => {
@@ -349,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let submitDeleteCommentForm = form => {
-        let commentElement = getNthParent(currentDeleteCommentButton, 5);
+        let commentElement = getNthParent(currentDeleteCommentButton, 3);
         let formData = serializeObject(form);
         let url = form.getAttribute("data-url");
 
@@ -379,11 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let replyNum = Number(replyNumberElement.textContent) - 1;
                 replyNumberElement.textContent = replyNum.toString();
 
-                if (replyNum > 1) {
-                    replyLinkElement.textContent = gettext("Replies");
-                } else {
-                    replyLinkElement.textContent = gettext("Reply");
-                }
                 // update total count of comments
                 commentCount(-1);
             }
